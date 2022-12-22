@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.ImageObserver;
 import java.text.AttributedCharacterIterator;
+import java.text.MessageFormat;
 
 
 public class main {
@@ -20,14 +21,22 @@ public class main {
         monEcran.setSize(1550,200);
         monEcran.setTitle("Jeu de l'oie");
 
+        int place1;
+        int place2;
 
-        monEcran.setContentPane(new Rectangles());
 
 
         int de1= 1 + (int)(Math.random() * ((6 - 1) + 1));
         int de2= 1 + (int)(Math.random() * ((6 - 1) + 1));
-        int place1=de1+de2;
-        int place2=7;
+        place1=de1+de2;
+        place2=7;
+
+        Rectangles mesRectangles=new Rectangles();
+        mesRectangles.posJ1=place1;
+        mesRectangles.posJ2=place2;
+
+
+        monEcran.setContentPane(mesRectangles);
 
         System.out.println("De1 "+de1);
         System.out.println("De2 "+de2);
